@@ -50,3 +50,23 @@ const NavigationBar = () => {
     props.logoutUser();
     dispatch(logoutUser());
   };
+
+    const guestLinks = (
+@@ -51,7 +54,7 @@ const NavigationBar = (props) => {
+
+  return (
+    <Navbar bg="dark" variant="dark">
+      <Link to={props.auth.isLoggedIn ? "home" : ""} className="navbar-brand">
+      <Link to={auth.isLoggedIn ? "home" : ""} className="navbar-brand">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Book_icon_1.png"
+          width="25"
+@@ -60,21 +63,9 @@ const NavigationBar = (props) => {
+        />{" "}
+        Book Store
+      </Link>
+      {props.auth.isLoggedIn ? userLinks : guestLinks}
+      {auth.isLoggedIn ? userLinks : guestLinks}
+    </Navbar>
+  );
+};
