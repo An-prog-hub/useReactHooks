@@ -70,3 +70,18 @@ const NavigationBar = () => {
     </Navbar>
   );
 };
+  
+  const mapStateToProps = (state) => {
+  return {
+    auth: state.auth,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logoutUser: () => dispatch(logoutUser()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar);
+export default NavigationBar;
